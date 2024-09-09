@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
+Route::get('/user',[UserController::class,'getUser']);
+Route::get('userdetail',[UserController::class,'aboutUser']);
+Route::get('/user/{name}',[UserController::class,'getUserName']);
+Route::get('welcome',[UserController::class,'welcomePage']);
+Route::get('admin',[UserController::class,'adminLogin']);
 
 Route::get('/', function () {
     return view('welcome');
