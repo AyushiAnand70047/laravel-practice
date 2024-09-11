@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\View;
 class UserController extends Controller
 {
     function userHome(){
-        return view('home');
+        $users = ['Ayushi','Anand','Tauqueer'];
+        return view('home',["users"=>$users]);
     }
     function userAbout($name){
         if(View::exists('about')){
