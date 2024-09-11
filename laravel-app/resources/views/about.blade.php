@@ -1,1 +1,4 @@
-<h1>This is about page</h1>
+<div>
+    <h1>About Page</h1>
+    <h2>User name is {{$user}}</h2>
+</div>
