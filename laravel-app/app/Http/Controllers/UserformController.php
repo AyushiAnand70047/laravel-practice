@@ -12,12 +12,13 @@ class UserformController extends Controller
         $request->validate([
             "username"=>"required | min: 3 | max: 15",
             "useremail"=>"required | email",
-            "usercity"=>"required",
+            "usercity"=>"required | uppercase",
             "skill"=>"required"
         ],[
             'username.required'=>'name can not be empty',
             'username.max'=>'name can not be greater than 15 characters',
-            'useremail.email'=>'email is not correct'
+            'useremail.email'=>'email is not correct',
+            'usercity.uppercase'=>'City must be in uppercase letter'
         ]);
 
         echo "Add user controller is called <br/>";
