@@ -1,3 +1,16 @@
+<h1>current url </h1>
+{{URL::current()}}
+<br/>
+{{url()->current()}}
+<br/>
+<h1>full url</h1>
+{{URL::full()}}
+<br/>
+{{url()->full()}}
+<br/>
+<h1>previous url</h1>
+{{url()->previous()}}
+
 @include('common.header')
 <h1>This is home page</h1>
 
