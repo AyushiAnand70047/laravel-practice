@@ -38,3 +38,13 @@ Route::prefix('user')->group(function () {
     Route::get('/show', [RouteGroupingPractice::class, 'show']);
     Route::get('/add', [RouteGroupingPractice::class, 'add']);
 });
+
+// Route::get('show', [RouteGroupingPractice::class, 'show']);
+// Route::get('add/{name}', [RouteGroupingPractice::class, 'add']);
+// Route::get('delete', [RouteGroupingPractice::class, 'delete']);
+
+Route::controller(RouteGroupingPractice::class)->group(function(){
+    Route::get('show','show');
+    Route::get('add/{name}','add');
+    Route::get('delete','delete');
+});

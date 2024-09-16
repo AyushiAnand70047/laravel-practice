@@ -10,7 +10,10 @@ class RouteGroupingPractice extends Controller
     function show(){
         return "User list";
     }
-    function add(){
-        return "add new user";
+    function add($name){
+        return " new user $name";
+    }
+    function delete(){
+        return "user deleted";
     }
 }
