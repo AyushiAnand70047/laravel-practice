@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserformController;
 use App\Http\Controllers\UserHomeController;
 use App\Http\Controllers\RouteGroupingPractice;
+use App\Http\Middleware\AgeCheck;
+use App\Http\Middleware\CountryCheck;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,9 +18,12 @@ Route::get('/', function () {
 //Route::get('user-home', [UserController::class, 'userHome'])->middleware('check1');
 // Route::get('user-about/{user}', [UserController::class, 'userAbout'])->middleware('check1');
 Route::middleware('check1')->group(function(){
-    Route::get('user-home', [UserController::class, 'userHome']);
+    //Route::get('user-home', [UserController::class, 'userHome']);
     Route::get('user-about/{user}', [UserController::class, 'userAbout']);
 });
+
+// Route::get('user-home', [UserController::class, 'userHome'])->middleware(AgeCheck::class);
+Route::get('user-home', [UserController::class, 'userHome'])->middleware([AgeCheck::class,CountryCheck::class]);
 
 // Route::get('user-form',function(){
 //     return view('user-form');
