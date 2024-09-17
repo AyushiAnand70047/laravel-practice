@@ -13,8 +13,12 @@ Route::get('/', function () {
 // Route::view('/home','home');
 // Route::view('/about','about');
 
-Route::get('user-home', [UserController::class, 'userHome']);
-Route::get('user-about/{user}', [UserController::class, 'userAbout']);
+//Route::get('user-home', [UserController::class, 'userHome'])->middleware('check1');
+// Route::get('user-about/{user}', [UserController::class, 'userAbout'])->middleware('check1');
+Route::middleware('check1')->group(function(){
+    Route::get('user-home', [UserController::class, 'userHome']);
+    Route::get('user-about/{user}', [UserController::class, 'userAbout']);
+});
 
 // Route::get('user-form',function(){
 //     return view('user-form');
