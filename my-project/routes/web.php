@@ -29,4 +29,8 @@ use App\Http\Controllers\UserController;
 
 //Route::get('/welcomeUser/{name}',[UserController::class,'welcomeUser']);
 
-Route::view('/alogin','admin.login');
+//Route::view('/alogin','admin.login');
+
+ Route::view('/','home');
+
+//Route::get('/',[UserController::class,'userHome']);
