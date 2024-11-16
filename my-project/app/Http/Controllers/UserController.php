@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\View;
 class UserController extends Controller
 {
     //
+
+    function addUser(Request $req){
+        // echo $req->username;
+        // echo $req->input('username');
+        print_r($req->skill);
+        return  $req;
+    }
+
+
     // function getUser(){
     //     return "This is Ayushi";
     // }

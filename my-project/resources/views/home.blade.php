@@ -1,6 +1,13 @@
+<x-message-banner msg="user added successfully" class="sucess" />
 @include('common.header',["data"=>"message from home page"])
 <h1>This is home page</h1>
 @includeIf('common.footer')
+
+<style>
+    .sucess{
+        background-color: green;
+    }
+</style>
 
 {{-- <div>
     <h1>This is home page</h1>
