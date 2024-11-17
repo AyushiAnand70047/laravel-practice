@@ -1,17 +1,27 @@
 <div>
     <!-- People find pleasure in different ways. I find it in keeping my mind clear. - Marcus Aurelius -->
+     {{--<div>
+        @if($errors->any())
+        @foreach ($errors->all() as $error)
+        <div style="color: red">{{$error}}</div>
+        @endforeach
+        @endif
+     </div>--}}
      <h1>Add new user</h1>
      <form action="addNewUser" method="post">
         @csrf
-        <!-- <div>
-            <input type="text" placeholder="enter name" name="username"/>
+        <div>
+            <input type="text" placeholder="enter name" name="username" value="{{old('username')}}" class="{{$errors->first('username')?'input-error':''}}"/>
+            <span style="color: red">@error('username'){{$message}}@enderror</span>
         </div>
         <div>
             <input type="text" placeholder="enter city" name="usercity"/>
+            <span style="color: red">@error('usercity'){{$message}}@enderror</span>
         </div>
         <div>
             <input type="text" placeholder="enter email" name="useremail"/>
-        </div> -->
+            <span style="color: red">@error('useremail'){{$message}}@enderror</span>
+        </div>
         <div>
             <h4>User Skills</h4>
             <input type="checkbox" name="skill[]" id="php" value="php"/>
@@ -46,3 +56,11 @@
         </div>
      </form>
 </div>
+
+
+<style>
+    .input-error{
+        background-color: red;
+        color: white;
+    }
+</style>

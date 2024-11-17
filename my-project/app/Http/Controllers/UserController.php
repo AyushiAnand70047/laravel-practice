@@ -10,9 +10,17 @@ class UserController extends Controller
     //
 
     function addUser(Request $req){
+        $req->validate([
+            'username'=>'required | min: 3 | max: 15',
+            'useremail'=>'required | email',
+            'usercity'=>'required | uppercase'
+        ],[
+            'username.required'=>'username feild can not be empty',
+            'useremail.email'=>'email is invalid'
+        ]);
         // echo $req->username;
         // echo $req->input('username');
-        print_r($req->skill);
+        //print_r($req->skill);
         return  $req;
     }
 
