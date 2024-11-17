@@ -1,5 +1,6 @@
 {{URL::current()}}
 {{URL::full()}}
+{{URL::previous()}}
 
 <x-message-banner msg="user added successfully" class="sucess" />
 @include('common.header',["data"=>"message from home page"])
